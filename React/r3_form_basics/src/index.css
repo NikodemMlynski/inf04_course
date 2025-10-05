@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+}
+.left {
+  padding: 15px;
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.right {
+  padding: 15px;
+  border-left: 3px solid black;
+  width: 40%;
+}
+.form_container {
+  width: 50%;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.form {
+  padding: 20px;
+  width: 50%;
+}
+.form p {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.form p label {
+  width: 30%;
+}
+.form p input {
+  width: 70%;
+}
+.sex label{
+  width: 50%;
+}
+.form_container .result {
+  border: 1px solid black;
+  padding: 15px;
+}

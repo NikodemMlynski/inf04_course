@@ -1,7 +1,6 @@
 import { useState } from "react";
-import "./App.css";
 
-export default function App() {
+export default function Form() {
   const [form, setForm] = useState({
     username: "",
     email: "",
@@ -60,44 +59,61 @@ export default function App() {
       <form className="form" onSubmit={handleSubmit}>
         <h2 className="title">Register</h2>
 
-        <Input 
-        value={form.username}
-        onChange={handleChange} 
-        placeholder="Enter Username"
-        name="username"
-        label="Username"
-        type="text"
-        errors={errors}
-         />
+        {/* Username */}
+        <div className="form-control">
+          <label>Username</label>
+          <input
+            type="text"
+            name="username"
+            value={form.username}
+            onChange={handleChange}
+            placeholder="Enter username"
+          />
+          {errors.username && <span className="error">{errors.username}</span>}
+        </div>
 
-        <Input 
-        value={form.email}
-        onChange={handleChange} 
-        placeholder="Enter Email"
-        name="email"
-        label="Email"
-        type="email"
-        errors={errors}
-         />
+        {/* Email */}
+        <div className="form-control">
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            value={form.email}
+            onChange={handleChange}
+            placeholder="Enter email"
+          />
+          {errors.email && <span className="error">{errors.email}</span>}
+        </div>
 
-        <Input 
-        value={form.password}
-        onChange={handleChange} 
-        placeholder="Enter Password"
-        name="password"
-        label="Password"
-        type="password"
-        errors={errors}
-         />
-        <Input 
-        value={form.passwordConfirm}
-        onChange={handleChange} 
-        placeholder="Confirm password"
-        name="passwordConfirm"
-        label="Confirm Password"
-        type="password"
-        errors={errors}
-         />
+        {/* Password */}
+        <div className="form-control">
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            value={form.password}
+            onChange={handleChange}
+            placeholder="Enter password"
+          />
+          {errors.password && (
+            <span className="error">{errors.password}</span>
+          )}
+        </div>
+
+        {/* Password Confirm */}
+        <div className="form-control">
+          <label>Confirm Password</label>
+          <input
+            type="password"
+            name="passwordConfirm"
+            value={form.passwordConfirm}
+            onChange={handleChange}
+            placeholder="Confirm password"
+          />
+          {errors.passwordConfirm && (
+            <span className="error">{errors.passwordConfirm}</span>
+          )}
+        </div>
 
         <button type="submit" className="submit-btn">
           Register
@@ -105,22 +121,4 @@ export default function App() {
       </form>
     </div>
   );
-}
-
-function Input({value, onChange, name, errors, label, type="text", placeholder=""}) {
-  return (
-    <div className="form-control">
-          <label>{label}</label>
-          <input
-            type={type}
-            name={name}
-            value={value}
-            onChange={onChange}
-            placeholder={placeholder}
-          />
-          {errors[name] && (
-            <span className="error">{errors[name]}</span>
-          )}
-        </div>
-  )
 }
