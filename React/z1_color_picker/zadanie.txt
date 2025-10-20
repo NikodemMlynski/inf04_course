@@ -1,0 +1,68 @@
+ZADANIE PRAKTYCZNE – REACT + BOOTSTRAP
+Temat: „RGB & Opacity Controller”
+
+====================================
+CEL
+====================================
+Utwórz aplikację webową w React z wykorzystaniem Bootstrap.
+Aplikacja ma pozwalać na zmianę koloru obrazka za pomocą suwaków RGB i przezroczystości (opacity).
+
+====================================
+STRUKTURA PROJEKTU
+====================================
+src/
+├── components/
+│   ├── ImageDisplay.jsx   – wyświetla obrazek
+│   └── ColorSliders.jsx   – zawiera suwaki RGB i opacity
+├── App.jsx                – główny komponent
+└── main.jsx               – punkt startowy aplikacji
+
+====================================
+WYGLĄD APLIKACJI
+====================================
+Tytuł okna: „Wzornik kolorów RGB. Wykonał [numer zdającego]”
+
+Układ:
+- Tło strony: Cornsilk (#FFF8DC)
+- Całość wyśrodkowana pionowo i poziomo:
+    dla diva opakującego całą aplikacje użyj klas bootstrap:
+    (`d-flex justify-content-center align-items-center vh-100 vw-100`)
+- W środku: biały kontener (`container text-center`), w tym kontenerze
+    - Nagłówek: 🎨 RGB & Opacity Controller
+    - Obrazek 400x300 px
+    - 4 suwaki:
+    • R, G, B – zakres 0–255  
+    • Opacity – zakres 1–100
+    - Wartości wyświetlane obok etykiet
+
+    ====================================
+DZIAŁANIE
+====================================
+1️⃣ Zmiana położenia suwaków powoduje natychmiastową zmianę koloru obrazka.  
+2️⃣ Kolor nakładki: `rgba(red, green, blue, opacity/100)`.  
+3️⃣ Wszystkie elementy wyśrodkowane, tylko klasy Bootstrapa (bez stylów inline oprócz rozmiaru obrazka).  
+
+====================================
+KOMPONENTY
+====================================
+App.jsx  
+- Zarządza stanem (red, green, blue, opacity).  
+- Przekazuje dane do komponentów.
+
+ImageDisplay.jsx  
+- Wyświetla diva o wymiarach 400px x 300px który jest wyśrodkowany i ma zaokrąglone krawędzie o 10px  
+- Nadaje mu kolor otrzymany z propsów: rgba(red, gree, blue, opacity / 100)
+
+ColorSliders.jsx  
+- div opakowujący aplikacje m mieć takie klasy bootstrap: (`card p-4 shadow-sm mx-auto`)
+- ma on zawierać cztery divy które są kontenerami dla:
+    - label (form-label)
+    - suwaka (form-range)
+- te suwaki wartości kolorów w czasie rzeczywistym.
+
+====================================
+EFEKT KOŃCOWY
+====================================
+✅ Obrazek zmienia kolor zgodnie z wartościami RGB i opacity.  
+✅ Interfejs czytelny i wyśrodkowany.  
+✅ Kod podzielony na logiczne komponenty i poprawnie sformatowany.

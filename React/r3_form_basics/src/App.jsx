@@ -1,8 +1,7 @@
-import DataForm from "../components/DataForm"
-import SolvedTask from "../components/SolvedTask"
-import StateForm from "../components/StateForm"
-import Task from "../components/Task"
-
+import StateForm from "./components/StateForm"
+import DataForm from "./components/DataForm"
+import Task from "./components/Task"
+import SolvedTask from "./components/SolvedTask"
 function App() {
   return (
     <div className="container">
@@ -11,7 +10,8 @@ function App() {
         <DataForm/>
       </div>
       <div className='right'>
-        <Task/>
+        {/* <Task/> */}
+        <SolvedTask/>
       </div>
     </div>
   )
