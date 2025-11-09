@@ -373,7 +373,87 @@ class Calculator {
 
 ## 8_combined_data_structures - Kombinacja List, Tablic, Obiektów, Metod
 
+```java
+import java.util.ArrayList;
+import java.util.HashSet;
+public class Main {
+    public static void main(String[] args) {
+        Book book1 = new Book("Ogniem i mieczem", "Henryk Sieńkiewicz");
+        Book book2 = new Book("Potop", "Henryk Sieńkiewicz");
+        Book book3 = new Book("Pan Wołodyjowski", "Henryk Sieńkiewicz");
+        Book book4 = new Book("Dziady", "Adam Mickiewicz");
+        Book book5 = new Book("Konrad Wallenrod", "Adam Mickiewicz");
 
+        ArrayList<Book> books = new ArrayList<>();
+        books.add(book1);
+        books.add(book2);
+        books.add(book3);
+        books.add(book4);
+        books.add(book5);
+
+        for (Book book : books) {
+            System.out.println(book);
+        }
+
+        ArrayList<Book> booksByAdamMickiewicz = filterByAuthor(books, "Adam Mickiewicz");
+        System.out.println("\nAdam Mickiewicz book: ");
+
+        for (Book book : booksByAdamMickiewicz) {
+            System.out.println(book);
+        }
+
+        ArrayList<Book> uniqueAuthorsBook = getUniqueAuthorBooks(books);
+        System.out.println("\nUnique Authors book: ");
+        for (Book book : uniqueAuthorsBook) {
+            System.out.println(book);
+        }
+    }
+    private static ArrayList<Book> filterByAuthor(ArrayList<Book> books, String author) {
+        ArrayList<Book> filteredBooks = new ArrayList<>();
+        for (Book book : books) {
+            if (book.getAuthor() == author) {
+                filteredBooks.add(book);
+            }
+        }
+        return filteredBooks;
+    }
+    private static ArrayList<Book> getUniqueAuthorBooks(ArrayList<Book> books) {
+        ArrayList<Book> uniqueAuthorBooks = new ArrayList<>();
+        for (Book book : books) {
+            boolean isUnique = true;
+            for (Book uniqueAuthorBook : uniqueAuthorBooks) {
+                if (book.getAuthor() == uniqueAuthorBook.getAuthor()) {
+                    isUnique = false;
+                }
+            }
+            if (isUnique) {
+                uniqueAuthorBooks.add(book);
+            }
+        }
+        return uniqueAuthorBooks;
+    }
+}
+
+class Book {
+    private String title;
+    private String author;
+    private int id;
+    private static int count = 0;
+
+    public Book(String title, String author) {
+        this.title = title;
+        this.author = author;
+        count++;
+        this.id = count;
+    }
+    public String getAuthor() {
+        return this.author;
+    }
+    public String toString() {
+        return "title: " + this.title + ", author: " + this.author + ", id: " + this.id;
+    }
+}
+```
 
 # Rozwiązania do zadań
 
