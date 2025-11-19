@@ -1,4 +1,4 @@
-# Java Console Programming & Algorithms — Learning Path
+# Java 
 
 Ten materiał pomoże Ci przejść przez najważniejsze podstawy programowania w **Javie**, pokazując jak osiągnąć te same efekty, które znasz z Pythona — ale przy użyciu składni i struktur charakterystycznych dla Javy.
 
