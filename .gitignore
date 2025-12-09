@@ -1,0 +1,67 @@
+# ----------------------------------------------------------------------
+# PLIKI GENEROWANE PRZEZ IDE ANDROID STUDIO / INTELLIJ
+# ----------------------------------------------------------------------
+
+# Katalogi systemowe/konfiguracyjne IDE
+.idea/
+# Lokalna konfiguracja IDE (np. rozmiar okna, historia)
+*.iml
+*.iws
+*.ipr
+
+# Pliki lokalne dla Gradle
+.gradle/
+build/
+
+# Pliki specyficzne dla systemów operacyjnych
+.DS_Store
+# Miniatury Windows
+Thumbs.db
+# Pliki systemowe Linux
+*~
+# Pliki tymczasowe macOS (Resource forks)
+._*
+
+# ----------------------------------------------------------------------
+# PLIKI GENEROWANE PRZEZ SYSTEM BUDOWANIA (Gradle)
+# ----------------------------------------------------------------------
+
+# Katalog build (skompilowany kod, pliki tymczasowe, APK)
+*/build/
+
+# Lokalny plik properties (może zawierać lokalne ścieżki SDK)
+local.properties
+
+# Pliki debugowania/crash dump
+captures/
+.externalNativeBuild/
+
+# Pliki generowane dla testów
+!**/src/main/**/build/
+
+# ----------------------------------------------------------------------
+# ANDROID / ARTYFAKTY WSPÓLNE
+# ----------------------------------------------------------------------
+
+# Wszystkie pakiety aplikacji (APK, AAB)
+*.apk
+*.aab
+
+# Pliki R8/ProGuard/Shrinker (mapowanie kodu)
+r8/
+proguard/
+
+# Obrazy binarne (jeśli nie są umieszczone w folderze 'assets')
+bin/
+
+# Pliki dex, jks, keystore (klucze podpisu - MUSZĄ być prywatne)
+*.dex
+*.jks
+*.keystore
+
+# Pliki wirtualnego urządzenia (AVD)
+/avd/
+
+# Dodatkowe pliki generowane przez wtyczki
+.cxx/
+cmake-build-*/
